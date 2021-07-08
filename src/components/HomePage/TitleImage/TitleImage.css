@@ -1,0 +1,14 @@
+.titleimage .title-section{
+    background-image: url("../../../Images/HomePage.jpg");
+    height: 60vh;
+    color:white;
+    background-size: cover;
+    background-position: center;
+    background-color: aqua;
+}
+
+.titleimage .title
+{
+    font-size: 40px;
+    padding-top: 390px;
+}

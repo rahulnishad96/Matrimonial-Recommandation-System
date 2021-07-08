@@ -1,0 +1,43 @@
+.story
+{
+    width: 100%;
+    height: 440px;
+    background-color: rgb(223, 233, 230);
+}
+.story .heading{
+    color: #940f30;
+    padding-top: 20px;
+}
+.story .card-box{
+    margin: 10px auto 0 auto;
+    height: 380px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.story .card{
+    height: 300px;
+    width: 300px;
+    margin-top: 40px;
+    
+}
+.story .card img{
+    height: 200px;
+    width: 280px;
+    
+}
+.story .card p{
+    margin: 10px auto 15px auto;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(34, 31, 31);
+} 
+.story .card a{
+    padding: 5px;
+    text-decoration: none;
+    color:#940f30;
+}
+.story .card a:hover{
+    opacity: 0.7;
+}

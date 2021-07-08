@@ -1,0 +1,78 @@
+
+.why
+{
+    height: 310px;
+    width: 100%;
+    background-color:white;
+    
+}
+.why-heading
+{
+    padding-top: 35px;
+    font-size: 25px;
+    font-weight: 400;    
+}
+.why-heading-border{
+    width: 50px;
+    border-bottom: 2px solid rgb(143, 11, 11);
+    padding-top: 30px;
+    margin: auto;
+}
+.why-reason-div{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 20px auto 0px auto;
+}
+.reason{
+    width: 215px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.8;
+}
+.trophy{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(120, 197, 96);
+    padding:15px 15px;
+     margin: 5px auto;
+    border-radius: 50%;
+    
+}
+.reason h6{
+    margin-top: 5px;
+    font-size: 15px;
+}
+.reason p{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.handshake{
+        width: 50px;
+        height: 50px;
+        background-color: rgb(96, 165, 197);
+        padding:15px 15px;
+         margin: 5px auto;
+        border-radius: 50%;
+        
+}
+.lock{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(155, 60, 60);
+    padding:15px 15px;
+     margin: 5px auto;
+    border-radius: 50%;
+    
+}
+.check{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(192, 144, 66);
+    padding:15px 15px;
+     margin: 5px auto;
+    border-radius: 50%;
+    
+}

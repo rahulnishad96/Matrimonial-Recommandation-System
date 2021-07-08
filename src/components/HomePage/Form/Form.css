@@ -1,0 +1,120 @@
+
+.form-section
+{
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(90deg, #940f30, #5c1a55);
+    background-size: 100% 100%;
+    color: white;
+}.heading{
+    padding-top: 40px;
+    font-size: 22px;
+}
+.explain{
+    font-size: 15px;
+}
+.form-div
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.form
+{
+    background-color:white;
+    height: 220px;
+    width: 900px;
+    border-radius: 5px;
+    color:black;
+    padding: 10px;
+}
+.form .first-row{
+    justify-content: space-around;
+    display: flex;
+    text-align: left;
+}
+.form .first-row  p {
+    font-size: 12px;
+    text-align: left;
+    color: rgb(25, 25, 173);
+}
+.form .first-row .full-name input{
+    border: none;
+    border-bottom: 1px solid rgba(22, 2, 2,0.3);
+    width: 330px;
+    padding: 10px 0px 5px 0px;
+    font-size: 17px;
+    text-align: left;
+}
+.form .first-row .full-name input:focus{
+    outline: none;
+}
+.form .first-row .gender form{
+    width: 300px;
+    font-size: 16px;
+    padding-top: 5px;
+    text-align: left;
+}
+.form .first-row .gender form label{
+    padding: 0px 20px 0px 5px;
+}
+.form .first-row .gender p{
+    padding-left: 0px;
+}
+.form .first-row .gender form label:first-child{
+    font-size: 18px;
+    padding-left: 0px;
+    text-align: left;
+    justify-self: start;
+}
+
+.form .first-row .gender form input{
+    padding-right: 10px;
+}
+
+.form .second-row{
+    margin-top: 20px;
+    justify-content: space-around;
+    display: flex;
+    text-align: left;
+}
+.form .second-row  p {
+    font-size: 12px;
+    text-align: left;
+    color: rgb(25, 25, 173);
+}
+
+.form .second-row select{
+    border: none;
+    border-bottom: 1px solid rgba(22, 2, 2,0.3);
+    width: 330px;
+    padding: 9px 0px 0px 0px;
+    font-size: 17px;
+    opacity: 0.8;
+    text-align: left;
+    
+}
+.form .second-row select:focus{
+    outline: none;
+}
+.form .second-row select option{
+    height: 20px;
+   
+}
+.form .second-row .form-community{
+    width: 300px;
+}
+
+.form .form-btn{
+    margin-top: 35px;
+    border: none;
+    width: 170px;
+    height:45px;
+    font-size: 16px;
+    background-color: rgb(52, 52, 141);
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    word-spacing: 2px;
+    cursor: pointer;
+}
