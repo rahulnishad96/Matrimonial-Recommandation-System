@@ -5,6 +5,7 @@ import Register1 from './components/Registation/Register1/Register1';
 import Register2 from './components/Registation/Register2/Register2';
 import {Route} from 'react-router-dom';
 import MainPage from './components/MainUserPage/MainPage';
+import {useForm } from 'react-hook-form';
 function App() {
   return (
     <div className="App">

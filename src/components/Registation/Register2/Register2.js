@@ -2,9 +2,13 @@ import React from 'react';
 import Footer from '../../HomePage/Footer/Footer';
 import './Register2.css';
 import {Link,useHistory} from 'react-router-dom';
+import { FirebaseAdd } from '../../firebaseAdd';
+import {useForm } from 'react-hook-form';
 function Register2() {
     const history = useHistory();
-    const SubmitHandler = () => {
+    const {register,handleSubmit} = useForm();
+    const SubmitHandler = (data) => {
+        FirebaseAdd(data);
         history.push('/mainpage');
     }
     return (
@@ -16,31 +20,31 @@ function Register2() {
             <section className="form-section" id="form">
                 <p className="heading">Just Completed</p>
                 <div className="form-div">
-                    <form onSubmit={SubmitHandler}>
+                    <form onSubmit={handleSubmit(SubmitHandler)}>
                     <div className="form">
                         <p className="heading">Account Details</p>
                         <div className="first-row">
                             <div className="full-name">
                                 <p>Mobile Number or Email ID</p>
-                                <input placeholder="Mobile Number or Email ID" required />
+                                <input name="userId" placeholder="Mobile Number or Email ID" required {...register("userId")}/>
                             </div>
                         </div>
                         <div className="first-row">
                         <div className="full-name">
                                 <p>Password</p>
-                                <input placeholder="Password" required type="password" />
+                                <input name="password" placeholder="Password" required type="password" {...register("password")}/>
                             </div>
                         </div>
                         <div className="first-row">
                         <div className="date">
                                 <p>Date of Birth</p>
-                                <input placeholder="" required type="date" />
+                                <input name="dob" placeholder="" required type="date" {...register("dob")}/>
                             </div>
                         </div>
                         <div className="first-row">
                         <div className="full-name">
                                 <p>Mobile Number</p>
-                                <input placeholder="XXXXX XXXXX" required type="text" />
+                                <input name="mobileNumber" placeholder="XXXXX XXXXX" required type="text" {...register("mobileNumber")}/>
                             </div>
                         </div>
                         <button className="form-btn" type="submit">Register</button>

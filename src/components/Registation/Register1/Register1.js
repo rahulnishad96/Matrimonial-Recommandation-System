@@ -2,9 +2,13 @@ import React from 'react'
 import './Register1.css';
 import Footer from '../../HomePage/Footer/Footer'
 import {Link,useHistory} from 'react-router-dom';
+import { FirebaseAdd } from '../../firebaseAdd';
+import {useForm } from 'react-hook-form';
 function Register1() {
     const history = useHistory();
-    const SubmitHandler = () => {
+    const {register,handleSubmit} = useForm();
+    const SubmitHandler = (data) => {
+        FirebaseAdd(data);
         history.push('/register2');
     }
     return (
@@ -14,7 +18,7 @@ function Register1() {
                 <Link to="/login"><button >Login</button></Link>
             </nav>
             <section className="form-section" id="form"> 
-            <form onSubmit={SubmitHandler}>
+            <form onSubmit={handleSubmit(SubmitHandler)}>
                 <p className="heading">Welcome! Lets create Your Profile</p>
                 <div className="form-div">
                     <div className="form">
@@ -22,15 +26,15 @@ function Register1() {
                         <div className="first-row">
                             <div className="full-name">
                                 <p>City you live in </p>
-                                <input placeholder="Eg. Mumbai" required />
+                                <input name="location"placeholder="Eg. Mumbai" required {...register("location")}/>
                             </div>
                             <div className="gender">
                                 <p>Are you live with your Famity ?</p>
                                 <form>
                                     <label for="male">Select</label>
-                                    <input type="radio" name="With-Family" id="Yes" value="Yes" />
+                                    <input type="radio" name="withFamily" id="Yes" value="Yes" {...register("withFamily")}/>
                                     <label for="Yes">Yes</label>
-                                    <input type="radio" name="With-Family" id="No" value="No" />
+                                    <input type="radio" name="withFamily" id="No" value="No" {...register("withFamily")}/>
                                     <label for="No">No</label>
                                 </form>
                             </div>
@@ -40,7 +44,7 @@ function Register1() {
                         <div className="second-row">
                         <div className="mother-tongue">
                             <p>Your marital Status</p>
-                            <select name="Marital-status" required >
+                            <select name="maritalStatus" required {...register("maritalStatus")}>
                                 <option value="">Select</option>
                                 <option value="Never Married" >Never Married</option>
                                 <option value="Married">Married</option>
@@ -48,7 +52,7 @@ function Register1() {
                         </div>
                         <div className="mother-tongue" required >
                             <p>Your Height</p>
-                            <select name="Hight" >
+                            <select name="hight" {...register("height")}>
                                 <option value="">Select</option>
                                 <option value="5-fit 1-inch">5-fit 1-inch</option>
                                 <option value="5-fit 2-inch">5-fit 2-inch</option>
@@ -75,7 +79,7 @@ function Register1() {
                         <div className="second-row">
                         <div className="mother-tongue">
                             <p>Your deit</p>
-                            <select name="dait" required >
+                            <select name="dait" required {...register("dait")}>
                                 <option value="">Select</option>
                                 <option value="Veg">Veg</option>
                                 <option value="Non-veg">Non-veg</option>
@@ -85,14 +89,14 @@ function Register1() {
                         </div>
                         <div className="full-name">
                                 <p>Your sub Community </p>
-                                <input placeholder="Eg. Brahmin" required />
+                                <input name="subcommunity" placeholder="Eg. Brahmin" required {...register("subcommunity")}/>
                             </div>
                         </div>
                         <p className="heading">Education</p>
                         <div className="second-row">
                         <div className="mother-tongue">
                             <p>Your Highest quilification</p>
-                            <select name="quilification" required >
+                            <select name="qualification" required {...register("qualification")}>
                                 <option value="">Select</option>
                                 <option value="Phd">Phd</option>
                                 <option value="Post-Graduate">Post-Graduate</option>
@@ -104,7 +108,7 @@ function Register1() {
                         </div>
                         <div className="mother-tongue">
                             <p>Your Monthly Income</p>
-                            <select name="income" required >
+                            <select name="income" required {...register("income")}>
                                 <option value="">Select</option>
                                 <option value="500000">More than 2 Lakhs</option>
                                 <option value="200000">Between 1 to 2 Lakhs</option>
@@ -120,12 +124,12 @@ function Register1() {
                         <div className="second-row">
                         <div className="full-name">
                                 <p>You work as</p>
-                                <input placeholder="Eg. Manager" required/>
+                                <input name="workAs" placeholder="Eg. Manager" required {...register("workAs")}/>
                             </div>
                         
                             <div className="full-name">
                                 <p>You work in</p>
-                                <input placeholder="Eg. Mahindra" required />
+                                <input name="workIn" placeholder="Eg. Mahindra" required {...register("workIn")}/>
                             </div>
                         </div>
                         <button className="form-btn" type="submit">Continue</button>

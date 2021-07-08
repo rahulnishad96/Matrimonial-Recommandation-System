@@ -7,12 +7,12 @@ import WhyChoose from './Whychoose/WhyChoose';
 import About from './About/About';
 import Footer from './Footer/Footer';
 
-function HomePage() {
+function HomePage(props) {
     return (
         <div className="Homepade-outer-div">
             <Headers/>
             <TitleImages/>
-            <Form/>
+            <Form />
             <WhyChoose/>
             <SuccessStory/>
             <About/>
