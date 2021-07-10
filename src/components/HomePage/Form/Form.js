@@ -7,7 +7,7 @@ import './Form.css';
 
 function Form() {
     const history = useHistory();
-    const {dispatch} = useForm();
+    const {state,dispatch} = useForm();
     const onSubmit = (e) => {
         e.preventDefault();
         const data = Array.from(e.target)
@@ -19,7 +19,8 @@ function Form() {
             type : ADD_FORM_DATA,
             payload: dataCollect
         })
-        //FirebaseAdd(data);
+        //FirebaseAdd({name:"rahul"});
+        console.log(state);
         history.push('/register1');
     }
     return (

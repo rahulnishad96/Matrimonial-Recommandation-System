@@ -1,25 +1,24 @@
 import {ADD_FORM_DATA} from './actionTypes'
 
 export const initialState = {
-    fullname:'',
-    gender:"",
-    motherTongue:"",
-    community:"",
-    location:"",
-    withFamily:"",
-    marriedStatus:"",
-    height:"",
-    deit:"",
-    subCommunity:"",
-    qualification:"",
-    income:"",
-    workAs:"",
-    workIn:"",
-    userId:"",
-    password:"",
-    dob:"",
-    mobNumber:""
-  };
+    community: "",
+dait: "",
+dob: "",
+fullname: "",
+gender: "",
+hight: "",
+income: "",
+location: "",
+maritalStatus: "",
+mobileNumber: "",
+motherTongue: "",
+password: "",
+qualification: "",
+subcommunity: "",
+userId: "",
+workAs: "",
+workIn: ""
+};
 
 
 const formReducer = (state = initialState, action) => {

@@ -104,6 +104,29 @@
 .form .second-row .form-community{
     width: 300px;
 }
+.form .first-row select{
+    border: none;
+    border-bottom: 1px solid rgba(22, 2, 2,0.3);
+    width: 300px;
+    padding: 9px 0px 0px 0px;
+    font-size: 17px;
+    opacity: 0.8;
+    text-align: left;
+    
+}
+.form .first-row select:focus{
+    outline: none;
+}
+.form .first-row select option{
+    height: 20px;
+   
+}
+.form .second-row .gender{
+    width: 300px;
+    font-size: 16px;
+    padding-top: 5px;
+    text-align: left;
+}
 
 .form .form-btn{
     margin-top: 35px;
