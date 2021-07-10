@@ -1,20 +1,31 @@
 import React from 'react'
-import './Form.css';
-import {useReducer} from 'react-dom';
 import {useHistory } from 'react-router-dom';
 import { FirebaseAdd } from '../../firebaseAdd';
-import {useForm } from 'react-hook-form';
+import {useForm} from '../../../context/formContext'
+import {ADD_FORM_DATA} from '../../../reducer/actionTypes'
+import './Form.css';
+
 function Form() {
-    const {register,handleSubmit} = useForm();
     const history = useHistory();
-    const onSubmit = (data) => {
-        FirebaseAdd(data);
+    const {dispatch} = useForm();
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const data = Array.from(e.target)
+        const dataCollect = {}
+        data.forEach(item => {
+            dataCollect[item.name] =  item.value
+        })
+        dispatch({
+            type : ADD_FORM_DATA,
+            payload: dataCollect
+        })
+        //FirebaseAdd(data);
         history.push('/register1');
     }
     return (
         <div className="form-outer-div">
             <section className="form-section" id="form">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={onSubmit}>
                 <p className="heading">Matches Within Your Community</p>
                 <p className="explain">Genuine Profiles | Safe & Secure | Detailed Family Information</p>
                 <div className="form-div">
@@ -22,23 +33,20 @@ function Form() {
                         <div className="first-row">
                             <div className="full-name">
                                 <p>Full Name </p>
-                                <input name="fullname" placeholder="Full Name" required {...register("fullname")}/>
+                                <input name="fullname" placeholder="Full Name" />
                             </div>
                             <div className="gender">
                                 <p>Select </p>
-                                <form required>
-                                    <label for="male">Gender </label>
-                                    <input type="radio" name="gender" id="male" value="male" required {...register("gender")}/>
-                                    <label for="male">Male</label>
-                                    <input type="radio" name="gender" id="female" value="female" required {...register("gender")}/>
-                                    <label for="female">Female</label>
-                                </form>
+                                <select name="gender" required> 
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                </select>
                             </div>
                         </div>
                         <div className="second-row">
                         <div className="motherTongue">
                             <p>Mother Tongue</p>
-                            <select name="motherTongue" required {...register("motherTongue")}>
+                            <select name="motherTongue" required>
                                 <option value="Hindi">Hindi</option>
                                 <option value="English">English</option>
                                 <option value="Bangali">Bangali</option>
@@ -53,7 +61,7 @@ function Form() {
                         </div>
                         <div className="form-community">
                             <p>Community</p>
-                            <select name="community" required {...register("community")}>
+                            <select name="community" required>
                                 <option value="Hindu">Hindu</option>
                                 <option value="Muslim">Muslim</option>
                                 <option value="Christian">Christian</option>
