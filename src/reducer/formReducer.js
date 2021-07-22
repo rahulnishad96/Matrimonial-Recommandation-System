@@ -24,11 +24,6 @@ workIn: ""
 const formReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_FORM_DATA: 
-        console.log( {
-            ...state,
-            ...action.payload
-        } , "data that is getting set in state"
-        )
              return {
                 ...state,
                 ...action.payload

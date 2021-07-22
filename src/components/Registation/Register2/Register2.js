@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Footer from '../../HomePage/Footer/Footer';
 import './Register2.css';
 import {Link,useHistory} from 'react-router-dom';
@@ -7,23 +7,28 @@ import {useForm } from '../../../context/formContext';
 import { ADD_FORM_DATA } from '../../../reducer/actionTypes';
 function Register2() {
     const history = useHistory();
+    const [status, setstatus] = useState(false);
     const {state,dispatch} = useForm();
     const onSubmit = (e) => {
         e.preventDefault();
-        const data = Array.from(e.target)
+        const data = Array.from(e.target);
         const dataCollect = {}
         data.forEach(item => {
-            dataCollect[item.name] =  item.value
+            dataCollect[item.name] =  item.value;
         })
         dispatch({
             type : ADD_FORM_DATA,
             payload: dataCollect
-        })
-        console.log(state);
-        //FirebaseAdd({name:"rahul"});
-        FirebaseAdd(JSON.stringify(state));
-        history.push('/mainpage');
+        }) 
+        setstatus(true); 
     }
+    useEffect(() => {
+        if(status){
+            console.log(state);
+        FirebaseAdd(JSON.stringify(state));
+        history.push('/mainpage');  
+        }
+    }, [status]);
     return (
         <div className="register2">
             <nav>

@@ -1,3 +1,42 @@
 .mainpage{
+    padding: 20px;
     margin: auto;
+    background-color: cadetblue;
+    
+}
+.mainpage .heading{
+    margin: 40px auto;
+    padding-bottom: 20px;
+    font-size: 40px;
+    background-color: brown;
+    color:white;
+    border-radius: 10px;
+    width: 60%;
+}
+.sorting-form
+{
+    display: flex;
+    justify-content:space-around;
+    width: 80%;
+    margin: auto;
+}
+
+.sorting-form select{
+    border: none;
+    border-bottom: 1px solid rgba(22, 2, 2,0.3);
+    width: 200px;
+    padding: 9px 0px 0px 0px;
+    font-size: 17px;
+    opacity: 0.9;
+    text-align: left;
+    color:rgb(17, 34, 66);
+    font-weight: 600;
+    
+}
+.sorting-form select:focus{
+    outline: none;
+}
+.sorting-form select option{
+    height: 30px;
+   
 }

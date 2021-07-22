@@ -1,0 +1,55 @@
+.user-outer-div{
+   padding: 20px;
+   width: 90%;
+   background-color: rgb(126, 226, 193);
+   color: rgb(64, 20, 68);
+   height: 400px;
+   margin: 20px auto;
+   border-radius: 20px;
+}
+.user-column{
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-name{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.user-name .icon{
+    margin-top: 0px;
+    width: 100px;
+    height: 100px;
+    margin: 30px auto 20px auto;
+    border-radius: 50%;
+    padding-top: 8px;
+    font-size: 60px;
+    background-color: aliceblue;
+    color:red;
+}
+.user-name h1{
+    color:rgb(87, 25, 8)
+}
+.user-column .personal{
+    display: flex;
+    flex-direction: column;
+}
+.personal h2{
+    margin-bottom: 10px;
+    text-align: left;
+    color:brown
+}
+.user-column .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    
+    
+}
+.row h3{
+    margin-right: 40px;
+    width:400px;
+    text-align: left;
+}

@@ -20,7 +20,7 @@ function Form() {
             payload: dataCollect
         })
         //FirebaseAdd({name:"rahul"});
-        console.log(state);
+        //console.log(state);
         history.push('/register1');
     }
     return (
